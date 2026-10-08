@@ -8,4 +8,5 @@ Poker
 Michał Pączkowski
 Michał Małecki
 Miłosz Szymczuk
+Miłosz Pawlaczyk
 Maciej Cyuńczyk (Lider)
