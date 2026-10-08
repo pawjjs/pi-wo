@@ -1,11 +1,11 @@
 # Nazwa Zespołu
-## Pi Wo
+Pi Wo
 
 # Temat
-## Poker
+Poker
 
 # Skład Zespołu
-## Michał Pączkowski
-## Michał Małecki
-## Miłosz Szymczuk
-## Maciej Cyuńczyk
+Michał Pączkowski
+Michał Małecki
+Miłosz Szymczuk
+Maciej Cyuńczyk (Lider)
