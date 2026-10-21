@@ -20,9 +20,16 @@ https://www.figma.com/design/bL3Y0ZhbUd7fBwTjebnxHM/Untitled?node-id=0-1&m=dev&t
 Aby uruchomić vue:
 Portrzebne rozszerzenia Vue i Vite
 
+Uruchamianie HelloWorld.vue:
 ```sh
 npm install (lub npm.cmd install)
 npm run dev (lub npm.cmd run dev)
 ```
 
 Vite wyświetli adres lokalnej aplikacji w terminalu.
+
+Aby uruchomić serwer backendu w osobnym terminalu:
+
+```sh
+npm run start:server
+```
