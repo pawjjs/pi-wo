@@ -4,6 +4,12 @@ const app = express();
 const PORT = 3000;
 const MAX_PLAYERS = 6;
 
+let testplayer = [
+    { pid: 1, nick: "Michał" },
+    { pid: 2, nick: "Miłosz" }
+]
+let nextPID = 3;
+
 let tables = [
     { id: 1, name: "Old Table", minBet: 5, bigBet: 10, players: ["Miłosz", "Miłosz", "Michał", "Michał", "Maciek", "Maciek"] },
     { id: 2, name: "High Table", minBet: 50, bigBet: 100, players: ["Miłosz", "Michał", "Maciek"] }

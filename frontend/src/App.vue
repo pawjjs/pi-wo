@@ -1,7 +1,7 @@
 <script setup>
 import { ref, computed } from 'vue'
-import Home from './views/HomePage.vue'
-import Test from './views/TestPage.vue'
+import Home from './views/stats/HomePage.vue'
+import Test from './views/stats/TestPage.vue'
 
 const greetings = ('Hello World!')
 
