@@ -3,6 +3,8 @@ import { ref, computed } from 'vue'
 import Home from './views/HomePage.vue'
 import Test from './views/TestPage.vue'
 
+const greetings = ('Hello World!')
+
 const routes = {
   '/': Home,
   '/testing': Test
@@ -21,6 +23,6 @@ const currentView = computed(() => {
 
 <template>
   <a href="#/">Home</a> |
-  <a href="#/about">Test</a> |
-  <component :is="currentView" />
+  <a href="#/testing">Test</a> |
+  <component :is="currentView" :message="greetings" />
 </template>
