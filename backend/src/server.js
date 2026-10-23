@@ -11,10 +11,11 @@ let testplayer = [
 let nextPID = 3;
 
 let tables = [
-    { id: 1, name: "Old Table", minBet: 5, bigBet: 10, players: ["Miłosz", "Miłosz", "Michał", "Michał", "Maciek", "Maciek"] },
-    { id: 2, name: "High Table", minBet: 50, bigBet: 100, players: ["Miłosz", "Michał", "Maciek"] }
-];
-let nextId = 3;
+    { id: 1, name: "Old Table", minBet: 5, bigBet: 10, players: ["Miłosz", "Miłosz", "Michał", "Michał", "Maciek"] },
+    { id: 2, name: "High Table", minBet: 50, bigBet: 100, players: ["Miłosz", "Michał", "Maciek"] },
+    { id: 3, name: "Full Table", minBet: 5, bigBet: 10, players: ["Miłosz", "Miłosz", "Michał", "Michał", "Maciek","Maciek"] }
+];  
+let nextId = 4;
 
 app.use(express.json());
 

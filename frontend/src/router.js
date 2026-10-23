@@ -1,4 +1,6 @@
 import HomePage from "./views/stats/HomePage.vue";
+import LobbyView from "./views/lobby/LobbyView.vue";
+import TableView from "./views/game/TableView.vue";
 import TestPage from "./views/stats/TestPage.vue";
 import ErrorPage from "./ErrorPage.vue";
 import { createRouter, createWebHistory } from "vue-router";
@@ -8,8 +10,15 @@ const router = createRouter({
     routes: [
     {
         path: '/',
-        component: HomePage,
-        props: {message: "Hello World!"}
+        component: HomePage
+    },
+    {
+        path: "/lobby",
+        component: LobbyView
+    },
+    {
+        path: "/table/:id(\\d+)",
+        component: TableView
     },
     {
         path: '/testing',
