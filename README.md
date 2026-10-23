@@ -1,14 +1,10 @@
 # Pi Wo
 
-Prototyp aplikacji pokerowej przygotowywany przez zespół Pi Wo.
-
-## Zespół
-
-- Michał Pączkowski
-- Michał Małecki
-- Miłosz Szymczuk
-- Miłosz Pawlaczyk
-- Maciej Cyuńczyk — lider
+| Informacja     | Dane                                                                                                                 |
+| -------------- | -------------------------------------------------------------------------------------------------------------------- |
+| Nazwa zespołu  | Pi Wo                                                                                                                |
+| Nazwa projektu | Poker                                                                                                                |
+| Skład zespołu  | 1. Michał Pączkowski<br>2. Michał Małecki<br>3. Miłosz Szymczuk<br>4. Miłosz Pawlaczyk<br>5. Maciej Cyuńczyk (lider) |
 
 ## Makieta
 
@@ -16,7 +12,7 @@ Prototyp aplikacji pokerowej przygotowywany przez zespół Pi Wo.
 
 ## Uruchomienie
 
-Wymagane są Node.js i zależności projektu. Zależności instalujemy w katalogu głównym:
+Wymagane są Node.js i rozszerzenia Vue oraz Vite w edytorze. Zależności instalujemy w katalogu głównym:
 
 ```sh
 npm install
