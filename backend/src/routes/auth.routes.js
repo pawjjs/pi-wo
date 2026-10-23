@@ -41,7 +41,8 @@ router.post("/register", async (req, res) => {
     };
 
     users.push(newUser);
-
+    console.log("=== NASZA TABLICA W RAM ===", users);
+    
     res.status(201).json({
         message: "Rejestracja zakończona sukcesem!",
         user: {
