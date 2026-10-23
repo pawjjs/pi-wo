@@ -1,4 +1,5 @@
 import express from "express";
+import authRouter from "./routes/auth.routes.js";
 
 const app = express();
 const PORT = 3000;
@@ -82,6 +83,8 @@ app.post("/api/tables/:id/join", (req, res) => {
     table.players.push(nickname.trim());
     res.status(201).json(table);
 });
+
+app.use("/api/v1/auth", authRouter);
 
 app.use((req, res) => {
     res.status(404).json({ error: "Not Found" });
