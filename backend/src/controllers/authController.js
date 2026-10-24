@@ -1,13 +1,13 @@
-import express from "express";
 import bcrypt from "bcryptjs";
-
-const router = express.Router();
 
 let users = [];
 let nextUserId = 1;
 
 
-router.post("/register", async (req, res) => {
+// router.post("/register", async (req, res) => {
+
+export async function register(req, res) {
+    
     const {username, email, password } = req.body ?? {};
 
     if (!username || !email || !password || password.length < 6)
@@ -56,12 +56,11 @@ router.post("/register", async (req, res) => {
 
 
 
-});
+};
 
-router.post("/login", async (req, res) => {
+export async function login(req, res) {
     res.json({ message: "cos2" });
-});
+}
 
-export default router;
 
   
