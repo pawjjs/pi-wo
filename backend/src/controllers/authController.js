@@ -7,7 +7,7 @@ let nextUserId = 1;
 // router.post("/register", async (req, res) => {
 
 export async function register(req, res) {
-    
+
     const {username, email, password } = req.body ?? {};
 
     if (!username || !email || !password || password.length < 6)
@@ -41,7 +41,6 @@ export async function register(req, res) {
     };
 
     users.push(newUser);
-    console.log("=== NASZA TABLICA W RAM ===", users);
     
     res.status(201).json({
         message: "Rejestracja zakończona sukcesem!",
@@ -59,7 +58,44 @@ export async function register(req, res) {
 };
 
 export async function login(req, res) {
-    res.json({ message: "cos2" });
+
+    const {email, password} = req.body ?? {};
+
+    if(!email || !password){
+        return res.status(400).json({
+            error: "Podaj login/email oraz hasło."
+        });
+    }
+
+    const identifier = email.trim().toLowerCase();
+
+    const user = users.find(u => u.email === identifier);
+
+    if(!user) {
+        return res.status(401).json({
+            error: "Nieprawidłowy email lub haslo."
+        });
+    }
+
+    const isPasswordValid = await bcrypt.compare(password, user.password_hash);
+
+    if (!isPasswordValid) { 
+        return res.status(401).json({
+            error: "Nieprawidłowy email lub haslo."
+        });
+    }
+
+    return res.status(200).json({
+        message: "Logowanie powiodło się",
+        user: {
+            id: user.id,
+            username: user.username,
+            email: user.email,
+            chips: user.chips,
+            role: user.role
+        }
+    });
+
 }
 
 
