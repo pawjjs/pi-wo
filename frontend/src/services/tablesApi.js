@@ -14,9 +14,9 @@ async function request(path) {
 }
 
 export function fetchAvailableTables() {
-  return request("/api/tables?available=true");
+  return request("/api/v1/tables?available=true");
 }
 
 export function fetchTable(id) {
-  return request(`/api/tables/${encodeURIComponent(id)}`);
+  return request(`/api/v1/tables/${encodeURIComponent(id)}`);
 }

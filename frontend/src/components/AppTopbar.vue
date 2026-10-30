@@ -3,6 +3,8 @@
     <nav class="nav" aria-label="Nawigacja główna">
       <RouterLink to="/">Start</RouterLink>
       <RouterLink to="/lobby">Lobby</RouterLink>
+      <RouterLink to="/register">Register</RouterLink>
+      <RouterLink to="/login">Log in</RouterLink>
     </nav>
   </header>
 </template>
