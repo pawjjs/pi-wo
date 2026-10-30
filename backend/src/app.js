@@ -1,5 +1,6 @@
 import express from "express";
 import apiRouter from "./routes/index.js";
+import { mountSwagger } from "./docs/swagger.js";
 
 const app = express();
 
@@ -11,6 +12,7 @@ app.use((req, res, next) => {
     next();
 });
 
+mountSwagger(app);
 app.use("/api/v1", apiRouter);
 
 app.use((req, res) => {
