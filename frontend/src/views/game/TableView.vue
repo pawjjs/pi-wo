@@ -43,8 +43,8 @@ onMounted(async () => {
           <tbody>
             <tr v-for="seat in 6" :key="seat">
               <td>{{ seat }}</td>
-              <td>{{ table.players[seat - 1] || "—" }}</td>
-              <td>{{ table.players[seat - 1] ? "Zajęte" : "Wolne" }}</td>
+              <td>{{ table.seats[seat - 1]?.nickname || "—" }}</td>
+              <td>{{ table.seats[seat - 1] ? "Zajęte" : "Wolne" }}</td>
             </tr>
           </tbody>
         </table>
