@@ -8,7 +8,7 @@ export const tablesPaths = {
                     in: "query",
                     name: "available",
                     schema: { type: "boolean" },
-                    description: "Jeśli true, zwraca stoły z wolnymi miejscami.",
+                    description: "Jeśli true, zwraca tylko stoły w stanie waiting z wolnymi miejscami.",
                 },
             ],
             responses: {
@@ -34,10 +34,14 @@ export const tablesPaths = {
                     "application/json": {
                         schema: {
                             type: "object",
-                            required: ["name", "minBet"],
+                            required: ["name", "minBet", "nickname"],
                             properties: {
                                 name: { type: "string", example: "Wieczorny stół" },
                                 minBet: { type: "integer", minimum: 1, example: 5 },
+                                bigBet: { type: "integer", minimum: 1, example: 10 },
+                                decisionTimeSec: { type: "integer", minimum: 1, example: 30 },
+                                maxBuyIn: { type: "integer", minimum: 1, example: 1000 },
+                                nickname: { type: "string", example: "Host" },
                             },
                         },
                     },
@@ -52,7 +56,7 @@ export const tablesPaths = {
                         },
                     },
                 },
-                400: { description: "Nieprawidłowe dane stołu" },
+                400: { description: "Nieprawidłowe dane stołu lub nick hosta" },
             },
         },
     },

@@ -53,8 +53,8 @@ onMounted(loadTables);
           <tr v-for="table in tables" :key="table.id">
             <td>{{ table.name }}</td>
             <td>{{ table.minBet }} / {{ table.bigBet }}</td>
-            <td>{{ table.players.length }} / 6</td>
-            <td>{{ Math.max(0, 6 - table.players.length) }}</td>
+            <td>{{ table.seats.filter(Boolean).length }} / 6</td>
+            <td>{{ Math.max(0, 6 - table.seats.filter(Boolean).length) }}</td>
             <td><RouterLink :to="`/table/${table.id}`">Otwórz pokój</RouterLink></td>
           </tr>
         </tbody>
