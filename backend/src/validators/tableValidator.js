@@ -44,14 +44,21 @@ export function validateNickname(body = {}) {
 }
 
 export function validateReady(body = {}) {
+    if (typeof body.nickname !== "string" || !body.nickname.trim()) {
+        throw new ValidationError("Nickname is required");
+    }
     if (typeof body.ready !== "boolean") {
         throw new ValidationError("Ready must be a boolean");
     }
-    return body.ready;
+    return { nickname: body.nickname.trim(), ready: body.ready };
 }
 
 export function validateKick(body = {}) {
-    return validateNickname(body);
+    const nickname = validateNickname(body);
+    if (typeof body.targetNickname !== "string" || !body.targetNickname.trim()) {
+        throw new ValidationError("Target nickname is required");
+    }
+    return { nickname, targetNickname: body.targetNickname.trim() };
 }
 
 export function validateLeave(body = {}) {
