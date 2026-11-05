@@ -17,6 +17,18 @@ export const openApiComponents = {
                 ready: { type: "boolean", example: false },
             },
         },
+        GameSession: {
+            type: "object",
+            required: ["sessionId", "startedAt", "players"],
+            properties: {
+                sessionId: { type: "string", example: "game-4-1730467200000" },
+                startedAt: { type: "string", format: "date-time" },
+                players: {
+                    type: "array",
+                    items: { $ref: "#/components/schemas/Seat" },
+                },
+            },
+        },
         Table: {
             type: "object",
             required: [
@@ -46,7 +58,8 @@ export const openApiComponents = {
                 },
                 countdownMode: { type: "string", nullable: true, enum: ["all_ready", "majority_ready"] },
                 countdownEndsAt: { type: "string", format: "date-time", nullable: true },
-                gameSession: { type: "object", nullable: true },
+                gameSession: { allOf: [{ $ref: "#/components/schemas/GameSession" }], nullable: true },
+                serverTime: { type: "string", format: "date-time", description: "Czas serwera zwracany podczas odliczania." },
             },
         },
         RegisterResponse: {
