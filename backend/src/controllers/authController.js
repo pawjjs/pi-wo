@@ -41,7 +41,8 @@ export async function register(req, res) {
     };
 
     users.push(newUser);
-    
+    console.log("Aktualna lista użytkowników w pamięci RAM:", users);
+
     res.status(201).json({
         message: "Rejestracja zakończona sukcesem!",
         user: {
@@ -84,7 +85,8 @@ export async function login(req, res) {
             error: "Nieprawidłowy email lub haslo."
         });
     }
-
+    
+    console.log(`Pomyślnie zalogowano użytkownika: ${user.username} (${user.email})`);
     return res.status(200).json({
         message: "Logowanie powiodło się",
         user: {

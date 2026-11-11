@@ -61,7 +61,7 @@ async function handleRegister()
             </p>
             <p style="font-weight: bold;">{{ serverMessage }}</p>
             
-
+            
         </form>
     </div>
 
