@@ -27,6 +27,7 @@ async function handleLogin() {
     }else{
         serverMessage.value = "Sukces: " + data.message
 
+        localStorage.setItem('token', data.token);
         email.value = ''
         password.value = ''
     }

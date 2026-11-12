@@ -1,4 +1,5 @@
 import bcrypt from "bcryptjs";
+import jwt from "jsonwebtoken";
 
 let users = [];
 let nextUserId = 1;
@@ -85,10 +86,22 @@ export async function login(req, res) {
             error: "Nieprawidłowy email lub haslo."
         });
     }
+    const JWT_SECRET = process.env.JWT_SECRET;
+
+    const token= jwt.sign(
+        {
+            id: user.id,
+            username: user.username,
+            role: user.role
+        },
+        JWT_SECRET,
+        {expiresIn: "24h"}
+    );
     
     console.log(`Pomyślnie zalogowano użytkownika: ${user.username} (${user.email})`);
     return res.status(200).json({
         message: "Logowanie powiodło się",
+        token,
         user: {
             id: user.id,
             username: user.username,
