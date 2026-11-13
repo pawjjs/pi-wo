@@ -5,6 +5,7 @@ import TestPage from "./views/stats/TestPage.vue";
 import RegisterView from "./views/auth/RegisterView.vue";
 import LoginView from "./views/auth/LoginView.vue";
 import ErrorPage from "./ErrorPage.vue";
+import ProfileView from "./views/profile/ProfileView.vue";
 
 import { createRouter, createWebHistory } from "vue-router";
 
@@ -38,6 +39,10 @@ const router = createRouter({
     {
         path: '/login',
         component: LoginView
+    },
+    {
+        path: '/profile',
+        component: ProfileView
     }
     ]
 

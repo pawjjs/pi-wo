@@ -1,10 +1,20 @@
+<script setup lang="ts">
+import { isLoggedIn, setLogout } from '../services/authStore';
+
+</script>
+
 <template>
   <header class="topbar">
     <nav class="nav" aria-label="Nawigacja główna">
       <RouterLink to="/">Start</RouterLink>
       <RouterLink to="/lobby">Lobby</RouterLink>
-      <RouterLink to="/register">Register</RouterLink>
-      <RouterLink to="/login">Log in</RouterLink>
+
+      <RouterLink v-if="!isLoggedIn" to="/register">Register</RouterLink>
+      <RouterLink v-if="!isLoggedIn" to="/login">Log in</RouterLink>
+
+      <RouterLink v-if="isLoggedIn" to="/profile">Profil</RouterLink>
+      <RouterLink v-if="isLoggedIn" to="/login" @click="setLogout">Log out</RouterLink>
+
     </nav>
   </header>
 </template>

@@ -1,5 +1,9 @@
 <script setup>
 import { ref } from 'vue'
+import { useRouter } from 'vue-router';
+import { setLogin } from '../../services/authStore'
+
+const router = useRouter();
 
 const email = ref('')
 const password = ref('')
@@ -27,7 +31,8 @@ async function handleLogin() {
     }else{
         serverMessage.value = "Sukces: " + data.message
 
-        localStorage.setItem('token', data.token);
+        setLogin(data.token);
+        router.push('/profile')
         email.value = ''
         password.value = ''
     }
