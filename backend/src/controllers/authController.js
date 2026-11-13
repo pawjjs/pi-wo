@@ -1,5 +1,6 @@
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
+import { use } from "react";
 
 let users = [];
 let nextUserId = 1;
@@ -102,6 +103,27 @@ export async function login(req, res) {
     return res.status(200).json({
         message: "Logowanie powiodło się",
         token,
+        user: {
+            id: user.id,
+            username: user.username,
+            email: user.email,
+            chips: user.chips,
+            role: user.role
+        }
+    });
+
+}
+
+export async function me(req, res){
+    const user = users.find(u => u.id === req.user.id);
+
+    if(!user){
+        return res.status(404).json({
+            error: "Użytkownik nie istnieje."
+        });
+    }
+    
+    return res.status(200).json({
         user: {
             id: user.id,
             username: user.username,
