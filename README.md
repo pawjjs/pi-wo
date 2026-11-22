@@ -2,11 +2,10 @@
 ## Pi Wo
 
 # Temat
-## Whiteboard
+## Poker
 
 # Skład Zespołu
-* Michał Pączkowski
-* Michał Małecki
-* Miłosz Szymczuk
-* Maciej Cyuńczyk
-* Miłosz Pawlaczyk
+## Michał Pączkowski
+## Michał Małecki
+## Miłosz Szymczuk
+## Maciej Cyuńczyk
